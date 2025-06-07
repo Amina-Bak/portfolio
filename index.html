@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Cyberpunk</title>
+    <style>
+        :root {
+            --neon-pink: #ff2a6d;
+            --neon-blue: #05d9e8;
+            --neon-purple: #d300c5;
+            --dark-bg: #0d0221;
+            --glow: 0 0 10px;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--dark-bg);
+            color: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-left: 1px solid var(--neon-blue);
+            border-right: 1px solid var(--neon-blue);
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(
+                    rgba(13, 2, 33, 0.9), 
+                    rgba(13, 2, 33, 0.9)
+                ),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="50" height="50" x="25" y="25" fill="none" stroke="%2305d9e8" stroke-width="0.5"/></svg>');
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        h1, h2 {
+            color: var(--neon-pink);
+            text-shadow: var(--glow) var(--neon-pink);
+            letter-spacing: 2px;
+        }
+        
+        h1::before, h2::before {
+            content: "> ";
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+        
+        li:nth-child(odd) {
+            color: var(--neon-blue);
+            text-shadow: var(--glow) var(--neon-blue);
+        }
+        
+        li:nth-child(even) {
+            margin-bottom: 1rem;
+        }
+        
+        .cyber-ui {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            position: relative;
+            border: 1px solid var(--neon-purple);
+            box-shadow: 
+                0 0 15px var(--neon-purple),
+                inset 0 0 10px var(--neon-purple);
+            background: rgba(5, 217, 232, 0.05);
+            overflow: hidden;
+        }
+        
+        .cyber-ui::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple));
+            opacity: 0.3;
+        }
+        
+        .cyber-ui::after {
+            content: "USER_ICON_7842";
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--neon-blue);
+            opacity: 0.7;
+        }
+        
+        .grid-line {
+            position: absolute;
+            background: rgba(5, 217, 232, 0.1);
+        }
+        
+        .horizontal {
+            width: 100%;
+            height: 1px;
+        }
+        
+        .vertical {
+            width: 1px;
+            height: 100%;
+        }
+        
+        .glitch-effect {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            text-shadow: 
+                2px 0 var(--neon-pink),
+                -2px 0 var(--neon-blue);
+            animation: glitch 2s infinite linear alternate;
+        }
+        
+        @keyframes glitch {
+            0% { clip-path: inset(10% 0 90% 0); }
+            20% { clip-path: inset(80% 0 5% 0); }
+            40% { clip-path: inset(30% 0 60% 0); }
+            60% { clip-path: inset(70% 0 20% 0); }
+            80% { clip-path: inset(5% 0 80% 0); }
+            100% { clip-path: inset(60% 0 30% 0); }
+        }
+        
+        .scanline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(5, 217, 232, 0.05) 50%,
+                transparent 100%
+            );
+            animation: scan 4s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { top: -100%; }
+            100% { top: 100%; }
+        }
+        
+        .username {
+            color: var(--neon-blue);
+            text-shadow: var(--glow) var(--neon-blue);
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-ui">
+        <div class="grid-line horizontal" style="top: 25%"></div>
+        <div class="grid-line horizontal" style="top: 50%"></div>
+        <div class="grid-line horizontal" style="top: 75%"></div>
+        <div class="grid-line vertical" style="left: 25%"></div>
+        <div class="grid-line vertical" style="left: 50%"></div>
+        <div class="grid-line vertical" style="left: 75%"></div>
+        <div class="glitch-effect">//DEV_UI</div>
+        <div class="scanline"></div>
+    </div>
+
+    <h1>A_PROPOS</h1>
+    
+    <div class="username">AmdAjmt*4ijHB0</div>
+    
+    <p>Étudiante en développement web et design numérique à l'école ETT Bordeaux, je me spécialise dans la création d'interfaces innovantes combinant esthétique cyberpunk et fonctionnalité.</p>
+    
+    <p>Passionnée par les nouvelles technologies, l'impression 3D et le design interactif, j'aime repousser les limites créatives dans mes projets.</p>
+    
+    <h2>LANGUES_MAITRISEES</h2>
+    
+    <ul>
+        <li>Français</li>
+        <li>Courant</li>
+        <li>Anglais</li>
+        <li>Courant</li>
+        <li>Russe</li>
+        <li>Courant</li>
+        <li>Ukrainien</li>
+        <li>Débutant</li>
+        <li>Polonais</li>
+        <li>Débutant</li>
+        <li>Coréen</li>
+        <li>Débutant</li>
+    </ul>
+</body>
+</html>
